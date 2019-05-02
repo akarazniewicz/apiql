@@ -89,7 +89,7 @@ will return all movies released in 1975 or later.
 
 ##### Query literals
 
-Literals are the values. Things that can be on the left hand side of predicate. So far we have seen strings ("Holy") and numeric literals (1975). ApiQL support bunch of other literals too:
+Literals are the values. Things that can be on the right hand side of predicate. So far we have seen strings ("Holy") and numeric literals (1975). ApiQL support bunch of other literals too:
 
 * Strings - all string literals are unicode and are following the same rules like JSON string literals. ApiQL strings are always double-quoted (for example, this is a string: "This is a string", this however: 'not a string' *is not*), and escaped ("The movie: \\"The Movie\\"").
 * Numbers - are basically integers and floats: `release_year != 2003` or `rating > 3.3` or even `rating > -1.6E-35`.
