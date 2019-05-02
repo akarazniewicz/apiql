@@ -19,11 +19,11 @@ class Movie(Base):
     __tablename__ = 'movie'
 
     id = Column(Integer, primary_key=True)
-    title: str = Column(String)
+    title = Column(String)
     original_title = Column(String)
     release_year = Column(Integer)
-    source: str = Column(String)
-    rating: str = Column(String)
+    source = Column(String)
+    rating = Column(String)
     created_datetime = Column(DateTime, default=datetime.utcnow)
 
     genres = relationship('Genre', cascade="all", backref="movie", lazy=True)

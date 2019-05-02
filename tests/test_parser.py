@@ -1,3 +1,4 @@
+import dateutil.parser
 import datetime
 
 from apiql.criteria import Criteria, Conjunction, Predicate
@@ -42,7 +43,7 @@ class ApiQueryDSLTest(unittest.TestCase):
 
     def test_test_datetime(self):
         date_time = datetime.datetime.now().isoformat()
-        self.assertEqual([('foo', '==', datetime.datetime.fromisoformat(date_time))],
+        self.assertEqual([('foo', '==', dateutil.parser.parse(date_time))],
                          parser.parse('foo==datetime("{}")'.format(date_time)).to_data())
 
     def test_eq(self):

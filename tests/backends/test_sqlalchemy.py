@@ -1,4 +1,5 @@
 import datetime
+import dateutil.parser
 import unittest
 
 from funcy import some, none
@@ -470,7 +471,7 @@ class TestSQLAlchemyCriteriaFiltering(unittest.TestCase):
         actual = session.query(Movie).with_criteria('created_datetime<datetime("{}")'.format(now))
 
         expected = session.query(Movie).filter(
-            Movie.created_datetime < datetime.datetime.fromisoformat(now)
+            Movie.created_datetime < dateutil.parser.parse(now)
         )
 
         results = actual.all()
@@ -490,8 +491,8 @@ class TestSQLAlchemyCriteriaFiltering(unittest.TestCase):
                                                     .format(monty_python_datetime, apocalypse_now_datetime))
 
         expected = session.query(Movie).filter(
-            Movie.created_datetime.notin_((datetime.datetime.fromisoformat(monty_python_datetime),
-                                           datetime.datetime.fromisoformat(apocalypse_now_datetime))
+            Movie.created_datetime.notin_((dateutil.parser.parse(monty_python_datetime),
+                                           dateutil.parser.parse(apocalypse_now_datetime))
                                           )
         )
 

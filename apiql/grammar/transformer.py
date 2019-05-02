@@ -1,4 +1,4 @@
-import datetime
+import dateutil.parser
 from enum import Enum
 from typing import Any, Callable
 
@@ -9,6 +9,7 @@ from . import ApiQLVisitor, ApiQLParser
 from ..criteria import Conjunction, Disjunction, Predicate, Criteria
 
 
+
 class ValueTypes(Enum):
     DATETIME = 1
     NUMBER = 2
@@ -17,7 +18,7 @@ class ValueTypes(Enum):
 
 def default_deserializer(value_type: ValueTypes, value: Any) -> Any:
     if value_type == ValueTypes.DATETIME:
-        return datetime.datetime.fromisoformat(value)
+        return dateutil.parser.parse(value)
 
     if value_type == ValueTypes.NUMBER:
         try:

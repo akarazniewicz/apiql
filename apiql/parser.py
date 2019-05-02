@@ -15,7 +15,7 @@ class ParseError(Exception):
 class ParseErrorListener(ErrorListener):
 
     def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
-        raise ParseError('Syntax error in column {}: {}'.format_map(column, msg))
+        raise ParseError('Syntax error in column {}: {}'.format(column, msg))
 
 
 def parse(query: str, deserializer: Callable[[ValueTypes, Any], Any] = default_deserializer) -> Criteria:
