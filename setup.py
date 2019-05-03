@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='apiql',
-    version='0.12.4',
+    version='0.12.6',
     test_suite='tests',
     author="Artur Karazniewicz",
     author_email="karaznie+pip@protonmail.com",
@@ -24,7 +24,7 @@ setuptools.setup(
     python_requires='>=3.5',
     keywords='api dynamic query flask bottle django sqlalchemy',
     project_urls={
-        "Homepage": "https://github.com/akarazniewicz/apiql/issues",
+        "Homepage": "https://github.com/akarazniewicz/apiql",
         "Bug Tracker": "https://github.com/akarazniewicz/apiql/issues",
         "Documentation": "https://github.com/akarazniewicz/apiql",
         "Source Code": "https://github.com/akarazniewicz/apiql",
@@ -33,6 +33,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Development Status :: 4 - Beta",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries :: Python Modules",
